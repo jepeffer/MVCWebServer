@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,8 +8,11 @@ namespace MVCWebServer.Models
 {
     public class User
     {
-         [Key]
+        [Key]
         public string username { get; set; }
-        public string password;
+
+        [Display(Name = "Password")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
     }
 }
