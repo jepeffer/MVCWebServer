@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MVCWebServer.Context;
 
 namespace MVCWebServer
 {
@@ -15,7 +13,20 @@ namespace MVCWebServer
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            // Set up configuration sources.
+            var builder = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .AddJsonFile("appsettings>.{env.EnvironmentName}.json", optional: true);
+
+
+            using (var db = new MyDbContext())
+            {
+                db.Database.EnsureCreated();
+                db.Database.Migrate();
+            }
         }
+
 
         public IConfiguration Configuration { get; }
 
@@ -23,6 +34,10 @@ namespace MVCWebServer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddMvc();
+
+            services.AddEntityFrameworkSqlite()
+            .AddDbContext<MyDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,8 +61,10 @@ namespace MVCWebServer
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                    );
             });
+ 
         }
     }
 }
