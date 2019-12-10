@@ -21,6 +21,7 @@ namespace MVCWebServer
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls("http://localhost:8998", "https://localhost:443");
                 });
     }
 }
