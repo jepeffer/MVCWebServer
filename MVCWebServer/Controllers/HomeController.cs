@@ -12,6 +12,7 @@ namespace MVCWebServer.Controllers
  
     public class HomeController : Controller
     {
+        [RequireHttps]
         public IActionResult Index()
         {
             //myDbContext.Users.First();

@@ -13,17 +13,19 @@ namespace MVCWebServer.Controllers
 {
     public class LoginController : Controller
     {
-
+        [RequireHttps]
         public IActionResult Index()
         {
             return View();
         }
 
+        [RequireHttps]
         public IActionResult NewUser()
         {
             return View();
         }
 
+        [RequireHttps]
         [HttpPost]
         public IActionResult CheckLogin(User userModel)
         {
