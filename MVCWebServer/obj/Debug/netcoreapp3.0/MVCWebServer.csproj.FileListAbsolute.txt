@@ -145,3 +145,6 @@ C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\MV
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\Login\CheckLogin.cshtml.g.cs
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\CreateUser\Index.cshtml.g.cs
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\CreateUser\NewUser.cshtml.g.cs
+C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\AddFriend\Index.cshtml.g.cs
+C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\Authed\Index.cshtml.g.cs
+C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\Home\Landing.cshtml.g.cs
