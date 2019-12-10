@@ -13,7 +13,6 @@ namespace MVCWebServer.Controllers
         private readonly MyDbContext myDbContext = new MyDbContext();
         public IActionResult Index()
         {
-             var category = myDbContext.Users.First();
             //myDbContext.Users.First();
             return View();
         }

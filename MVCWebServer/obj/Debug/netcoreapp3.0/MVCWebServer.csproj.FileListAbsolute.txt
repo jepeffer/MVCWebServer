@@ -142,3 +142,6 @@ C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\bin\Debug\netcoreapp3.0\ru
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\bin\Debug\netcoreapp3.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\bin\Debug\netcoreapp3.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\MVCWebServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\Login\CheckLogin.cshtml.g.cs
+C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\CreateUser\Index.cshtml.g.cs
+C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\CreateUser\NewUser.cshtml.g.cs

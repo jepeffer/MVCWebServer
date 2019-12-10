@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.Sqlite;
 using MVCWebServer.Models;
 
 namespace MVCWebServer.Controllers
@@ -25,15 +27,51 @@ namespace MVCWebServer.Controllers
         [HttpPost]
         public IActionResult CheckLogin(User userModel)
         {
+
             if (ModelState.IsValid)
             {
                 using (MD5 md5Hash = MD5.Create())
                 {
                     string hash = GetMd5Hash(md5Hash, userModel.Password);
+
+                    using (var connection = new SqliteConnection("" +
+                    new SqliteConnectionStringBuilder
+                    {
+                        DataSource = "MVCDB.db"
+                    }))
+                    {
+                        connection.Open();
+
+                        using (var transaction = connection.BeginTransaction())
+                        {
+                            string password = "";
+                            var selectCommand = connection.CreateCommand();
+                            selectCommand.Transaction = transaction;
+                            selectCommand.CommandText = "SELECT password FROM users WHERE username = '" + userModel.username + "'";
+                            using (var reader = selectCommand.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    password = reader.GetString(0);
+                                    Debug.WriteLine("Message : " + password);
+                                }
+                            }
+                            transaction.Commit();
+                            Debug.WriteLine(hash + " " + password);
+                            bool auth = hash.Equals(password);
+
+                            if (auth)
+                            {
+                                userModel.auth = true;
+                                return View(userModel);
+                            }
+                           
+                        }
+                    }
                 }
             }
+            return View(userModel);
 
-            return View();
         }
 
         static string GetMd5Hash(MD5 md5Hash, string input)

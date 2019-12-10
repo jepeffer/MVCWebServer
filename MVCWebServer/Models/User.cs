@@ -14,5 +14,7 @@ namespace MVCWebServer.Models
         [Display(Name = "Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        public bool auth { get; set; } = false;
     }
 }

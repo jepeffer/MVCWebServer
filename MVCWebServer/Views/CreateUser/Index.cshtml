@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "View";
+}
+@model MVCWebServer.Models.User
+
+@using (Html.BeginForm("NewUser", "CreateUser", FormMethod.Post))
+{
+    @Html.TextBoxFor(model => model.username)
+    @Html.ValidationMessageFor(model => model.username)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Password, new { @class = "col-md-2 control-label"})
+        </div>
+    </div>
+    @Html.ValidationMessageFor(model => model.Password)
+    <button type="submit">Enter</button>
+}
+

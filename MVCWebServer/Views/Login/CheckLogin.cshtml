@@ -2,6 +2,16 @@
 @{
     ViewData["Title"] = "Checking Login";
 }
+@model MVCWebServer.Models.User
 
-<h1>BadLogn</h1>
+@{
+    if (Model.auth)
+    {
+        @Html.Label(Model.username + " welcome back!");
+    }
+    else
+    {
+            @Html.Label("WHY ARE YOU HERE???");
+        }
+    }
 
