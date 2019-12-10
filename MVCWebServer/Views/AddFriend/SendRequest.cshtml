@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "SendRequest";
+}
+@model MVCWebServer.Models.User
+@if (ViewData["Succ"] == "-1")
+{
+    <h1>Friend request sent to @Model.toAdd bad from @Model.username!</h1>
+}
+else
+{
+    <h1>Friend request sent to @Model.toAdd successfully from @Model.username!</h1>
+}
+
+

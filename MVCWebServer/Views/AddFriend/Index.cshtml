@@ -6,3 +6,14 @@
 
 <h1>Index</h1>
 
+@using (Html.BeginForm("SendRequest", "AddFriend", FormMethod.Post))
+{
+    @Html.TextBoxFor(model => model.toAdd)
+    @Html.HiddenFor(x => x.username)
+    @Html.HiddenFor(x => x.auth)
+
+    <input type="submit" value="Enter" />
+}
+
+
+

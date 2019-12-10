@@ -27,8 +27,9 @@
                                     @Html.HiddenFor(x => x.username)
                                     @Html.HiddenFor(x => x.auth)
 
-                                    <input type="submit" value="Next" />
+                                    <input type="submit" value="Home" />
                                 }
+                                
                                 // @Html.ActionLink("HomeAUTH", "Index", "Home", new { @class = "navbar-brand" })
                             }
 
@@ -40,7 +41,7 @@
                                     @Html.HiddenFor(x => x.username)
                                     @Html.HiddenFor(x => x.auth)
 
-                                    <input type="submit" value="Next" />
+                                    <input type="submit" value="Home" />
                                 }
 
                                 //@Html.ActionLink("HomeNOT", "Index", "Home", new { @class = "navbar-brand" })
@@ -49,22 +50,30 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Login", "NewUser", "Login")</li>
-                        @{ 
+
+                        @{
                             if (Model != null)
                             {
-
                                 if (!Model.auth)
                                 {
-                                     <li>@Html.ActionLink("Create Account", "Index", "CreateUser")</li>
+                                    <li>@Html.ActionLink("Create Account", "Index", "CreateUser")</li>
+                                    <li>@Html.ActionLink("Login", "NewUser", "Login")</li>
+
+                                }
+                                else
+                                {
+                                    @Html.Label("Logged in as: " + Model.username)
+                                    @using (Html.BeginForm("Index", "AddFriend", new { }))
+                                    {
+                                        @Html.HiddenFor(x => x.username)
+                                        @Html.HiddenFor(x => x.auth)
+
+                                        <input type="submit" value="Add Friend" />
                                     }
                                 }
+                            }
 
-                                else {
-                                <li>@Html.ActionLink("Create AccountNULL", "Index", "CreateUser")</li>
-                            }
-                            }
+                        }
 
                     </ul>
                 </div>

@@ -16,5 +16,7 @@ namespace MVCWebServer.Models
         public string Password { get; set; }
 
         public bool auth { get; set; } = false;
+
+        public string toAdd { get; set; }
     }
 }
