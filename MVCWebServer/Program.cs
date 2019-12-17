@@ -22,7 +22,7 @@ namespace MVCWebServer
                 {
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseSetting("https_port", "443");
-                    webBuilder.UseUrls("http://localhost:8998", "https://localhost:44380");
+                    webBuilder.UseUrls("http://159.203.78.118:80", "https://localhost:443");
                 });
     }
 }

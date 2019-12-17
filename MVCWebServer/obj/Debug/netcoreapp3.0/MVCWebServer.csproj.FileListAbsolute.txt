@@ -118,7 +118,6 @@ C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\MV
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\MVCWebServer.Views.pdb
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\bin\Debug\netcoreapp3.0\Microsoft.Data.Sqlite.dll
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\bin\Debug\netcoreapp3.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Sqlite.dll
@@ -149,3 +148,9 @@ C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Ra
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\Login\Index.cshtml.g.cs
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\Login\NewUser.cshtml.g.cs
 C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\AddFriend\SendRequest.cshtml.g.cs
+C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\Shared\__Layout.cshtml.g.cs
+C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\SeeFriends\Index.cshtml.g.cs
+C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\SeeFriends\AcceptFriend.cshtml.g.cs
+C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\SeeFriends\MessageFriend.cshtml.g.cs
+C:\Users\myhog\source\repos\MVCWebServer\MVCWebServer\obj\Debug\netcoreapp3.0\Razor\Views\SeeFriends\SendMessage.cshtml.g.cs

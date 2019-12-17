@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model MVCWebServer.Models.User
+<h1>View your friends below</h1>
+<h2>Pending friend requests</h2>
+@if (Model.currentPending.Count == 0)
+{
+    @Html.Label("No friends pending currently!")
+}
+
+@for (int i = 0; i < Model.currentPending.Count; i++)
+{
+
+    <div>
+        @using (Html.BeginForm("AcceptFriend", "SeeFriends", FormMethod.Post))
+        {
+
+            @Html.LabelFor(model => model.toAdd, Model.currentPending[i])
+            @Html.HiddenFor(x => x.username)
+            @Html.HiddenFor(x => x.toAdd)
+            @Html.HiddenFor(x => x.auth)
+
+            <input type="hidden" value="@Model.currentPending[i]" id="request" name="request" />
+            <input type="submit" value="Accept Friend Request" class="btn-primary" />
+        }
+
+
+    </div>
+}
+
+<h2>Current friends</h2>
+
+@if (Model.currentFriends.Count == 0)
+{
+    @Html.Label("No friends currently!")
+}
+
+@for (int i = 0; i < Model.currentFriends.Count; i++)
+{
+
+    <div>
+        @using (Html.BeginForm("MessageFriend", "SeeFriends", FormMethod.Post))
+        {
+
+            @Html.LabelFor(model => model.toAdd, Model.currentFriends[i])
+            @Html.HiddenFor(x => x.username)
+            @Html.HiddenFor(x => x.toAdd)
+            @Html.HiddenFor(x => x.auth)
+
+            <input type="hidden" value="@Model.currentFriends[i]" id="request" name="request" />
+            <input type="submit" value="Send Message" class="btn-primary" />
+        }
+    </div>
+}

@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "MessageFriend";
+}
+@model MVCWebServer.Models.User
+
+<h1>In chat with @Model.toAdd</h1>
+
+@if (Model.currentMessages.Count == 0)
+{
+    <h2>No messages to display!</h2>
+}
+@for (int i = 0; i < Model.currentMessages.Count; i++)
+{
+    <div><p>Me: @Model.currentMessages[i]</p></div>
+}
+
+@for (int i = 0; i < Model.theirMessages.Count; i++)
+{
+    <div><p>Them: @Model.theirMessages[i]</p></div>
+}
+
+<div>
+    @using (Html.BeginForm("SendMessage", "SeeFriends", FormMethod.Post))
+    {
+
+        @Html.Label("Message: ")
+        @Html.TextBoxFor(model => model.messageToSend)
+        @Html.ValidationMessageFor(model => model.messageToSend)
+        @Html.HiddenFor(x => x.username)
+        @Html.HiddenFor(x => x.toAdd)
+        @Html.HiddenFor(x => x.auth)
+        <input type="hidden" value="@Model.toAdd" id="request" name="request" />
+        <input type="submit" value="Send Message" class="btn-primary" />
+    }
+</div>
+

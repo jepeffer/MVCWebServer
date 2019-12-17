@@ -1,7 +1,11 @@
 ﻿
 @{
     ViewData["Title"] = "NewUser";
-}
+}  
+@using (Html.BeginForm("Index", "Home", new { }))
+{ 
 
-<h1>NewUser</h1>
+    <input type="submit" value="Home" class="btn-primary" />
+}
+<h1>Thanks for creating an account!</h1>
 

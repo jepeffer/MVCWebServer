@@ -70,7 +70,7 @@ namespace MVCWebServer.Controllers
                             " VALUES ( $user_id_link1, $user_id_link2 )";
 
                         insertCommand.Parameters.AddWithValue("$user_id_link1", userid1);
-                        insertCommand.Parameters.AddWithValue("$user_id_link1", userid2);
+                        insertCommand.Parameters.AddWithValue("$user_id_link2", userid2);
                         insertCommand.ExecuteNonQuery();
                         ViewData["Succ"] = "0";
 
